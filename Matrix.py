@@ -28,7 +28,7 @@ class Matrix:
     @classmethod
     def sub(cls, m1, m2):
         if len(m1.matrix) != len(m2.matrix) or len(m1.matrix[0]) != len(m2.matrix[0]):
-            raise ValueError("can't add matrices with different dimensions.")
+            raise ValueError("can't subtract matrices with different dimensions.")
 
         res_matrix = [[0 for i in range(len(m1.matrix[0]))] for j in range(len(m1.matrix))]
         for i in range(len(m1.matrix)):
