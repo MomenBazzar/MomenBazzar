@@ -28,7 +28,7 @@ class Matrix:
     @classmethod
     def sub(cls, m1, m2):
         if len(m1.matrix) != len(m2.matrix) or len(m1.matrix[0]) != len(m2.matrix[0]):
-            raise ValueError("can't subtract matrices with different dimensions.")
+            raise ValueError("can't add matrices with different dimensions.")
 
         res_matrix = [[0 for i in range(len(m1.matrix[0]))] for j in range(len(m1.matrix))]
         for i in range(len(m1.matrix)):
@@ -37,17 +37,21 @@ class Matrix:
 
         return cls(res_matrix)
 
-    def scale(self, val=1):
+    @classmethod
+    def scale(cls, self, val=1):
+        res_matrix = [[0 for i in range(len(self.matrix[0]))] for j in range(len(self.matrix))]
         for i in range(len(self.matrix)):
             for j in range(len(self.matrix[i])):
-                self.matrix[i][j] = self.matrix[i][j] * val
+                res_matrix[i][j] = self.matrix[i][j] * val
+        return cls(res_matrix)
 
-    def transpose(self):
+    @classmethod
+    def transpose(cls, self):
         res_matrix = [[0 for i in range(len(self.matrix))] for j in range(len(self.matrix[0]))]
         for i in range(len(self.matrix)):
             for j in range(len(self.matrix[i])):
                 res_matrix[j][i] = self.matrix[i][j]
-        self.matrix = res_matrix
+        return cls(res_matrix)
 
     @classmethod
     def dot(cls, m1, m2):
@@ -60,6 +64,24 @@ class Matrix:
                 for k in range(len(m2.matrix)):
                     res_matrix[i][j] += m1.matrix[i][k] * m2.matrix[k][j]
         return cls(res_matrix)
+
+    @classmethod
+    def determenent(cls, mx):
+        if len(mx.matrix) > 2:
+            det = 0
+            for x in range(len(mx.matrix[0])):
+                before_mx = [[mx.matrix[i][j] for j in range(0, x)] for i in range(1, len(mx.matrix))]
+                after_mx = [[mx.matrix[i][j] for j in range(x + 1, len(mx.matrix[0]))] for i in
+                            range(1, len(mx.matrix))]
+                for i in range(len(before_mx)):
+                    for j in range(len(after_mx[i])):
+                        before_mx[i].append(after_mx[i][j])
+                det += ((-1) ** x) * mx.matrix[0][x] * mx.determenent(cls(before_mx))
+            return det
+
+        if len(mx.matrix) == 2:
+            res = (mx.matrix[0][0] * mx.matrix[1][1]) - (mx.matrix[0][1] * mx.matrix[1][0])
+            return res
 
 
 # tester1 = Matrix.zeroMatrix(2, 3)
@@ -78,10 +100,14 @@ class Matrix:
 # print(f"tester2 scaled by 2 is {tester2.matrix}")
 # tester2.transpose()
 # print(f"tester2 after transpose is {tester2.matrix}")
-# a = Matrix([[2, 2],
-#             [0, 3],
-#             [0, 4]])
+# a = Matrix([
+#             [2, 5, 0, 3],
+#             [-1, 2, 3, -2],
+#             [2, 1, -2, 0],
+#             [2, 1, 4, 7]
+#             ])
 # b = Matrix([[2, 1, 2],
 #             [3, 2, 4]])
 # res = Matrix.dot(a, b)
 # print(f"res of dot product = {res.matrix}")
+# print(Matrix.determenent(a))
