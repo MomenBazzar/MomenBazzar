@@ -83,7 +83,39 @@ class Matrix:
             res = (mx.matrix[0][0] * mx.matrix[1][1]) - (mx.matrix[0][1] * mx.matrix[1][0])
             return res
 
+    @classmethod
+    def inverse(cls, mx):
+        if len(mx.matrix) != len(mx.matrix[0]):
+            raise ValueError("Can't find inverse for non-square matrix")
+        det = mx.determenent(mx)
+        if det == 0:
+            raise ValueError("Singular matrix has no inverse")
 
+        inv = []
+
+        if len(mx.matrix) == 2:
+            inv.append([mx.matrix[1][1], -mx.matrix[0][1]])
+            inv.append([-mx.matrix[1][0], mx.matrix[0][0]])
+            inverse = cls(inv)
+            return inverse.scale(inverse, 1/det)
+
+        for i in range(len(mx.matrix)):
+            inv.append([])
+            for j in range(len(mx.matrix[i])):
+                minor = []
+                for ii in range(len(mx.matrix)):
+                    if ii == i:
+                        continue
+                    minor.append([])
+                    for jj in range(len(mx.matrix[ii])):
+                        if jj == j:
+                            continue
+                        minor[-1].append(mx.matrix[ii][jj])
+                inv[-1].append(((-1)**(i+j)) * mx.determenent(cls(minor)))
+
+        inverse = cls(inv)
+        inverse = inverse.transpose(inverse)
+        return inverse.scale(inverse, 1/det)
 # tester1 = Matrix.zeroMatrix(2, 3)
 # tester1.cell(1, 1, 11)
 # tester1.cell(2, 0, 3)
@@ -106,8 +138,10 @@ class Matrix:
 #             [2, 1, -2, 0],
 #             [2, 1, 4, 7]
 #             ])
-# b = Matrix([[2, 1, 2],
-#             [3, 2, 4]])
+# b = Matrix([[5, -2],
+#             [3, 2]])
 # res = Matrix.dot(a, b)
 # print(f"res of dot product = {res.matrix}")
 # print(Matrix.determenent(a))
+# inv = Matrix.inverse(a)
+# print()
