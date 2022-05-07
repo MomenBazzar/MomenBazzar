@@ -33,16 +33,16 @@
 <br/>
 
 <p align="center">
-    <a href="https://github.com/Mr-13est/github-readme-streak-stats">
-        <img title="🔥 Get streak stats for your profile at git.io/streak-stats" alt="Momen Bazzar streak" src="https://github-readme-streak-stats.herokuapp.com/?user=Mr-13est&theme=black-ice&hide_border=true&stroke=0000&background=060A0CD0"/>
+    <a href="https://github.com/MomenBazzar/github-readme-streak-stats">
+        <img title="🔥 Get streak stats for your profile at git.io/streak-stats" alt="Momen Bazzar streak" src="https://github-readme-streak-stats.herokuapp.com/?user=MomenBazzar&theme=black-ice&hide_border=true&stroke=0000&background=060A0CD0"/>
     </a>
 </p>
 
 ## 📊 My Github Stats
 
   <br/>
-    <a href="https://github.com/Mr-13est/github-readme-stats"><img alt="Mr-13est Github Stats" src="https://github-readme-stats.vercel.app/api?username=Mr-13est&show_icons=true&count_private=true&theme=react&hide_border=true&bg_color=0D1117" /></a>
-  <a href="https://github.com/Mr-13est/github-readme-stats"><img alt="Mr-13est Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mr-13est&langs_count=8&count_private=true&layout=compact&theme=react&hide_border=true&bg_color=0D1117" /></a>
+    <a href="https://github.com/MomenBazzar/github-readme-stats"><img alt="MomenBazzar Github Stats" src="https://github-readme-stats.vercel.app/api?username=MomenBazzar&show_icons=true&count_private=true&theme=react&hide_border=true&bg_color=0D1117" /></a>
+  <a href="https://github.com/MomenBazzar/github-readme-stats"><img alt="MomenBazzar Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MomenBazzar&langs_count=8&count_private=true&layout=compact&theme=react&hide_border=true&bg_color=0D1117" /></a>
   <br/>
   <b>Note:</b> Top languages is only a metric of the languages my public code consists of and doesn't reflect experience or skill level.
 
@@ -50,7 +50,7 @@
 <br/>
 <br/>
 
-<a href="https://github.com/Mr-13est/github-readme-activity-graph"><img alt="Mr-13est Activity Graph" src="https://activity-graph.herokuapp.com/graph?username=Mr-13est&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" /></a>
+<a href="https://github.com/MomenBazzar/github-readme-activity-graph"><img alt="MomenBazzar Activity Graph" src="https://activity-graph.herokuapp.com/graph?username=MomenBazzar&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" /></a>
 
 <br/>
 <br/>
