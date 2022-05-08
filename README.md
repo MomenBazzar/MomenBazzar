@@ -40,7 +40,7 @@
     </a>
 </p>
   <br/>
-    <a href="https://github.com/MomenBazzar/github-readme-stats"><img alt="MomenBazzar Github Stats" src="https://github-readme-stats.vercel.app/api?username=MomenBazzar&show_icons=true&count_private=true&theme=react&hide_border=true&bg_color=0D1117" /></a>
+    <a align="center" href="https://github.com/MomenBazzar/github-readme-stats"><img alt="MomenBazzar Github Stats" src="https://github-readme-stats.vercel.app/api?username=MomenBazzar&show_icons=true&count_private=true&theme=react&hide_border=true&bg_color=0D1117" /></a>
     <br/>
   <a href="https://github.com/MomenBazzar/github-readme-stats"><img alt="MomenBazzar Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MomenBazzar&langs_count=8&count_private=true&layout=compact&theme=react&hide_border=true&bg_color=0D1117" /></a>
   <br/>
